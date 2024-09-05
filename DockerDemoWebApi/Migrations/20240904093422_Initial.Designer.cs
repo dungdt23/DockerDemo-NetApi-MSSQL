@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DockerDemoWebApi.Migrations
 {
     [DbContext(typeof(DockerComposeDemoDbContext))]
-    [Migration("20240419235045_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240904093422_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
