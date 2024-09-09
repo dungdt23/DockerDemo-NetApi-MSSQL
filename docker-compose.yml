@@ -3,7 +3,7 @@ version: '3.8'
 services:
   docker-demo-web-api:
     container_name: docker-demo-web-api-container
-    image: aliyildizoz909/docker-demo
+    image: drfredchv/docker-webapi-mssql
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
@@ -12,7 +12,7 @@ services:
       - docker-demo-sqlserver    
   docker-demo-sqlserver:
     container_name: docker-demo-sqlserver-container
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/mssql/server:latest
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
