@@ -10,6 +10,7 @@ services:
       - "5000:8080"
     depends_on:
       - docker-demo-sqlserver    
+
   docker-demo-sqlserver:
     container_name: docker-demo-sqlserver-container
     image: mcr.microsoft.com/mssql/server:latest
@@ -17,4 +18,10 @@ services:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
     ports:
-      - "1433:1433" 
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql 
+
+volumes:
+  sql_data:
+    driver: local
